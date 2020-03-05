@@ -27,6 +27,8 @@ Route::post('Products', 'ProductsController@index')-> middleware('verified');
 
 Route::get('Games', 'GamesController@index')->name('Games') -> middleware('verified');
 
+Route::get('details/{id}', 'GameDetailsController@index')->name('details') -> middleware('verified');
+
 //edit user
 Route::get('Settings', 'Auth\EditUserController@index')->name('Settings') -> middleware('verified');
 Route::post('Settings' , 'Auth\EditUserController@updateuser' )-> middleware('verified');
