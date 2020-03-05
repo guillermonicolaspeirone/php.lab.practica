@@ -19,34 +19,53 @@
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="Products"> Products </a>
-                        <a class="nav-link" href=""> Link</a>
+                        <a class="nav-link" href="Games"> Games</a>
                     </nav>
                 </div>
+
+                <!--
+
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="false" aria-controls="collapsePages">
                     <div class="sb-nav-link-icon">
                         <i class="fas fa-book-open"> </i>
                     </div>
-                    Layouts 2
-                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    Games
+                    <div class="sb-sidenav-collapse-arrow">
+                        <i class="fas fa-angle-down"></i>
+                    </div>
                 </a>
+
+                -->
                 <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                         <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#pagesCollapseAuth"
                             aria-expanded="false" aria-controls="pagesCollapseAuth">sub menu 1
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
+                            <div class="sb-sidenav-collapse-arrow">
+                                <i class="fas fa-angle-down"></i>
+                            </div>
+                        </a>
                         <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordionPages">
-                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="">Link</a><a
-                                    class="nav-link" href="">Link</a><a class="nav-link" href=""> Link</a></nav>
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="">Link</a>
+                                <a class="nav-link" href="">Link</a>
+                                <a class="nav-link" href=""> Link</a>
+                            </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError"
                             aria-expanded="false" aria-controls="pagesCollapseError">sub menu 2
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
+                            <div class="sb-sidenav-collapse-arrow">
+                                <i class="fas fa-angle-down"></i>
+                            </div>
+                        </a>
                         <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordionPages">
-                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="">Link </a><a
-                                    class="nav-link" href=""> Link</a><a class="nav-link" href="">Link</a></nav>
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="">Link </a>
+                                <a class="nav-link" href=""> Link</a>
+                                <a class="nav-link" href="">Link</a>
+                            </nav>
                         </div>
                     </nav>
                 </div>

@@ -41,5 +41,27 @@ class DatabaseSeeder extends Seeder
 
         }
 
+        for ($i=1; $i <= 150 ; $i++) { 
+            
+            DB::table('games')->insert([
+                'id' => $i,
+                'Genere' => Str::random(10),
+                'Name' => Str::random(10),
+                'Developer' => Str::random(10),
+                'Status' =>  Str::random(10),
+                'Value' =>  mt_rand(1, 100) / 10,
+                'Published_at' => null,
+                'Contact_page' => Str::random(10),
+                'img' => Str::random(10),
+
+            ]);
+
+        }
+
+
+
+
+
+
     }
 }

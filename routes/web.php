@@ -21,8 +21,11 @@ Route::post('register', 'Auth\RegisterController@index');
 
 //Pages
 Route::get('home', 'HomeController@index')->name('home') -> middleware('verified');
+
 Route::get('Products', 'ProductsController@index')->name('Products') -> middleware('verified');
 Route::post('Products', 'ProductsController@index')-> middleware('verified');
+
+Route::get('Games', 'GamesController@index')->name('Games') -> middleware('verified');
 
 //edit user
 Route::get('Settings', 'Auth\EditUserController@index')->name('Settings') -> middleware('verified');
