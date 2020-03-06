@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        for ($i=1; $i <= 150 ; $i++) { 
+        for ($i=1; $i <= 30 ; $i++) { 
             
             DB::table('productos')->insert([
                 'id' => $i,
@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
 
         }
 
-        for ($i=1; $i <= 150 ; $i++) { 
+        for ($i=1; $i <= 16 ; $i++) { 
             
             DB::table('games')->insert([
                 'id' => $i,
@@ -54,6 +54,18 @@ class DatabaseSeeder extends Seeder
                 'Contact_page' => Str::random(10),
                 'img' => Str::random(10),
 
+            ]);
+
+        }
+
+        for ($i=1; $i <= 160 ; $i++) { 
+            
+            DB::table('reviews')->insert([
+                'id' => $i,
+                'Game_id' => mt_rand(1, 16),
+                'Raiting' => mt_rand(1, 100),
+                'Comment' => Str::random(100),
+                'Submit_date' =>  null,
             ]);
 
         }

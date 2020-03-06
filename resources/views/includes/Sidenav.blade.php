@@ -3,7 +3,7 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">Core</div>
-                <a class="nav-link" href="home">
+                <a class="nav-link" href="{{route('home')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
                     Home
                 </a>
@@ -18,8 +18,8 @@
                 </a>
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="Products"> Products </a>
-                        <a class="nav-link" href="Games"> Games</a>
+                        <a class="nav-link" href="{{route('Products')}}"> Products </a>
+                        <a class="nav-link" href="{{route('Games')}}"> Games</a>
                     </nav>
                 </div>
 

@@ -14,7 +14,11 @@ class GameDetailsController extends Controller
         $Games =  DB::table('Games')
         ->where('id', $id ) ->first() ;
 
-        return view('pages.Game-Details' , compact('Games'));
+        $reviews = DB::table('reviews')->where('Game_id', $id )->Paginate(5);
+
+        $Raiting = $reviews->avg('Raiting');
+
+        return view('pages.Game-Details' , compact('Games','Raiting') , ['reviews' => $reviews] );
 
        
     }
