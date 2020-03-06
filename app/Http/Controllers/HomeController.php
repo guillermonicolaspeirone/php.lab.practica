@@ -24,7 +24,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.home');
+
+        $Games = DB::table('Games')
+                    ->join('reviews', 'Games.id', '=', 'reviews.Game_id')
+                    ->select('Game_id as id',  DB::raw('avg(Raiting) as Raiting'))
+                    ->groupBy('Game_id')
+                    ->orderBy('Raiting','desc')
+                    ->limit(4)
+                    ->get(); 
+
+
+        return view('pages.home' , ['Games' => $Games] );
     }
+
 
 }
