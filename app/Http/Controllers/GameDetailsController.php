@@ -16,7 +16,7 @@ class GameDetailsController extends Controller
 
         $reviews = DB::table('reviews')->where('Game_id', $id )->Paginate(5);
 
-        $Raiting = $reviews->avg('Raiting');
+        $Raiting = DB::table('reviews')->where('Game_id', $id )->avg('Raiting');
 
         return view('pages.Game-Details' , compact('Games','Raiting') , ['reviews' => $reviews] );
 
