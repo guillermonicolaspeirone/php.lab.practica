@@ -14,7 +14,7 @@ class CreateGamesTable extends Migration
     public function up()
     {
         Schema::create('games', function (Blueprint $table) {
-            $table->integer('id')->unique();
+            $table->bigIncrements('id')->unique();
             $table->string('Genere');
             $table->string('Name')->unique();
             $table->string('Developer');
@@ -33,6 +33,6 @@ class CreateGamesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_games');
+        Schema::dropIfExists('games');
     }
 }

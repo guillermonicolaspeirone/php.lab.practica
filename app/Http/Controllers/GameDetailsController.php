@@ -20,7 +20,5 @@ class GameDetailsController extends Controller
 
         return view('pages.Game-Details' , compact('Games','Raiting') , ['reviews' => $reviews] );
 
-       
     }
-
 }

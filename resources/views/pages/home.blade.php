@@ -11,7 +11,7 @@
 @section('content')
 
 
-<h1 class="mt-4">Home</h1>
+<h1 class="mt-4">Top Tendring</h1>
 
 
     <div class="row">
@@ -19,7 +19,6 @@
         @foreach ($Games as $Gm)
     
         @include('Includes.Cards')
-    
     
         @endforeach
     

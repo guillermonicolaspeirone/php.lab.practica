@@ -2,7 +2,7 @@
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
             <div class="nav">
-                <div class="sb-sidenav-menu-heading">Core</div>
+                <div class="sb-sidenav-menu-heading">Home</div>
                 <a class="nav-link" href="{{route('home')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
                     Home
@@ -23,24 +23,24 @@
                     </nav>
                 </div>
 
-                <!--
+                
 
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="false" aria-controls="collapsePages">
                     <div class="sb-nav-link-icon">
                         <i class="fas fa-book-open"> </i>
                     </div>
-                    Games
+                    Developer tools
                     <div class="sb-sidenav-collapse-arrow">
                         <i class="fas fa-angle-down"></i>
                     </div>
                 </a>
 
-                -->
+              
                 <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                        <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#pagesCollapseAuth"
-                            aria-expanded="false" aria-controls="pagesCollapseAuth">sub menu 1
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth"
+                            aria-expanded="false" aria-controls="pagesCollapseAuth">Upload
                             <div class="sb-sidenav-collapse-arrow">
                                 <i class="fas fa-angle-down"></i>
                             </div>
@@ -48,9 +48,9 @@
                         <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordionPages">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="">Link</a>
-                                <a class="nav-link" href="">Link</a>
-                                <a class="nav-link" href=""> Link</a>
+                                <a class="nav-link" href="{{route('GamesAdd')}}">Add Game</a>
+                                <a class="nav-link" href="#">Link</a>
+                                <a class="nav-link" href="#"> Link</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError"
@@ -62,9 +62,9 @@
                         <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordionPages">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="">Link </a>
-                                <a class="nav-link" href=""> Link</a>
-                                <a class="nav-link" href="">Link</a>
+                                <a class="nav-link" href="#">Link </a>
+                                <a class="nav-link" href="#"> Link</a>
+                                <a class="nav-link" href="#">Link</a>
                             </nav>
                         </div>
                     </nav>

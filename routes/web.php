@@ -19,15 +19,18 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('register', 'Auth\RegisterController@index')->name('register')->middleware('guest');
 Route::post('register', 'Auth\RegisterController@index');
 
-//Pages
+//Home
 Route::get('home', 'HomeController@index')->name('home') -> middleware('verified');
 
+//Products
 Route::get('Products', 'ProductsController@index')->name('Products') -> middleware('verified');
 Route::post('Products', 'ProductsController@index')-> middleware('verified');
 
+//Games
 Route::get('Games', 'GamesController@index')->name('Games') -> middleware('verified');
-
 Route::get('details/{id}', 'GameDetailsController@index')->name('details') -> middleware('verified');
+Route::get('GamesAdd', 'GameAddController@index')->name('GamesAdd') -> middleware('verified');
+Route::post('GamesAdd', 'GameAddController@Add');
 
 //edit user
 Route::get('Settings', 'Auth\EditUserController@index')->name('Settings') -> middleware('verified');
