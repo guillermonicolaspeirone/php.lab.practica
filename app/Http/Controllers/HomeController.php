@@ -25,13 +25,35 @@ class HomeController extends Controller
     public function index()
     {
 
+        // $Games = DB::table('Games')
+        //             ->join('reviews', 'Games.id', '=', 'reviews.Game_id')
+        //             ->select('Game_id as id',  DB::raw('avg(Raiting) as Raiting'))
+        //             ->groupBy('Game_id')
+        //             ->orderBy('Raiting','desc')
+        //             ->limit(4)
+        //             ->get(); 
+
+
+
+
+        $reviews = DB::table('reviews')
+                    ->select('Game_id as Game_id',  DB::raw('avg(Raiting) as Raiting'))
+                    ->groupBy('Game_id');
+
+                    
         $Games = DB::table('Games')
-                    ->join('reviews', 'Games.id', '=', 'reviews.Game_id')
-                    ->select('Game_id as id',  DB::raw('avg(Raiting) as Raiting'))
-                    ->groupBy('Game_id')
+                    ->joinSub($reviews, 'reviews', function ($join) {
+                        $join->on('Games.id', '=', 'reviews.Game_id');
+                    })
                     ->orderBy('Raiting','desc')
                     ->limit(4)
                     ->get(); 
+           
+
+
+
+        
+
 
 
         return view('pages.home' , ['Games' => $Games] );
