@@ -44,6 +44,9 @@ class GameAddController extends Controller
             'Contact_page' => $request['Contact_page'],
             'img' => $request['img'],
         ]);
+
+            return redirect('home') ;
+
         }else {
             return back()
             ->withErrors()
