@@ -4,10 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 use App\Games;
 use App\Models;
 use Illuminate\Support\Facades\Validator;
+
+use App\Traits\UploadTrait;
 
 use Illuminate\Validation\Rule;
 
@@ -15,6 +19,8 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class GameAddController extends Controller
 {
+
+    use UploadTrait;
     public function index(){
 
         return view('pages.Game-Add');
@@ -31,11 +37,25 @@ class GameAddController extends Controller
             'Status'  => 'required|max:255',
             'Value'  => 'required|max:255',
             'Contact_page'  => 'required|max:255',
-            'img'  => 'required',
+            'img'  => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         if ($validatedData == true) {
         
+            $image      = $request->file('img');
+            $fileName   = time() . '.' . $image->getClientOriginalExtension();
+
+            $img = Image::make($image->getRealPath());
+            $img->resize(120, 120, function ($constraint) {
+                $constraint->aspectRatio();                 
+            });
+
+            $img->stream();
+
+            Storage::disk('local')->put('public'.'/'. 'img'.'/'.$fileName, $img, 'public');
+        
+
+
         Games::create([
             'Genere' => $request['Genere'],
             'Name' => $request['name'],
@@ -44,7 +64,8 @@ class GameAddController extends Controller
             'Value' => $request['Value'],
             'Published_at' => $request['Published_at'],
             'Contact_page' => $request['Contact_page'],
-            'img' => $request['img'],
+            'img' => $fileName,
+
         ]);
 
             return redirect('home') ;

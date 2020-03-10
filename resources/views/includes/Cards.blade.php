@@ -6,8 +6,10 @@
         </div>
 
         <div class="card-body">
-            <img class="card-img-top" src="{{$Gm->img}}" alt="Card image">
+            <img class="card-img-top"  src="{{asset("storage/img/". $Gm->img)}}" alt="">
         </div>
+
+
 
         <div>
             <a class="small stretched-link" href="{{route('details', $Gm->id)}}"></a>

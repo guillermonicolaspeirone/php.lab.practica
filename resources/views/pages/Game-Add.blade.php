@@ -15,7 +15,7 @@
     <div class="card-header">
         <h5 class="title">Add Game</h5>
     </div>
-    <form action="{{ route('GamesAdd') }}" method="POST">
+    <form action="{{ route('GamesAdd') }}" method="POST" enctype="multipart/form-data" >
         {{ csrf_field() }}
         <div class="card-body">
             <div class="row">
