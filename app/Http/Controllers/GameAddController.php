@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Validation\Rule;
 
+use Intervention\Image\ImageManagerStatic as Image;
+
 class GameAddController extends Controller
 {
     public function index(){

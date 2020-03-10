@@ -76,8 +76,8 @@
                 <div class="col-md-4 pl-md-1">
                     <div class="form-group">
                         <label>img</label>
-                        <input type="text" name="img" class="form-control  {{ $errors->has('img') ? ' is-invalid' : '' }}"
-                         value="{{ old('email') }}">
+                        <input type="file" name="img" class="form-control  {{ $errors->has('img') ? ' is-invalid' : '' }}"
+                         value="{{ old('img') }}">
                         {!! $errors->first('img' , '<span class="help-block" style="color : red">:message</span>') !!}
                     </div>
                 </div>

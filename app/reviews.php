@@ -1,12 +1,13 @@
 <?php
 
 namespace App;
+
 use Illuminate\Database\Eloquent\Model;
 
-class Games extends Model
+class reviews extends Model
 {
 
-    protected $table = 'Games';
+    protected $table = 'reviews';
     
     /**
      * The attributes that are mass assignable.
@@ -14,14 +15,10 @@ class Games extends Model
      * @var array
      */
     protected $fillable = [
-        'Genere',
-        'Name',
-        'Developer',
-        'Status' ,
-        'Value' ,
-        'Published_at' ,
-        'Contact_page' ,
-        'img' ,
+        'Game_id',
+        'Raiting',
+        'Comment',
+        'Submit_date' ,
     ];
 
     protected $guarded = ['id'];
@@ -43,5 +40,5 @@ class Games extends Model
     ];
     
     public $timestamps = false;
+
 }
-?>

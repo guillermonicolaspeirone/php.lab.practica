@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Games ;
+use App\reviews ;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -25,14 +28,12 @@ class HomeController extends Controller
     public function index()
     {
     
-        $reviews = DB::table('reviews')
-                    ->select('Game_id as Game_id',  DB::raw('avg(Raiting) as Raiting'))
-                    ->groupBy('Game_id');
+        $reviews = reviews::select('Game_id as Game_id',  DB::raw('avg(Raiting) as Raiting'))
+                            ->groupBy('Game_id');
 
-        $Games = DB::table('Games')
-                    ->joinSub($reviews, 'reviews', function ($join) {
-                        $join->on('Games.id', '=', 'reviews.Game_id');
-                    })
+        $Games = Games::joinSub($reviews, 'reviews', function ($join) {
+                            $join->on('Games.id', '=', 'reviews.Game_id');
+                        })
                     ->orderBy('Raiting','desc')
                     ->limit(4)
                     ->get(); 

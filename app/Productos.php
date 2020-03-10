@@ -9,6 +9,8 @@ class Productos extends Model
 {
     use Notifiable;
 
+    protected $table = 'Productos';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -38,6 +40,7 @@ class Productos extends Model
      */
     protected $casts = [
     ];
+
     public $timestamps = false;
 }
 ?>

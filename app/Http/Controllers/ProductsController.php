@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\productos ;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -11,8 +13,7 @@ class ProductsController extends Controller
     {
         if ($request->has('Busqueda')) {
             $busq = $request->Busqueda;
-            $productos =  DB::table('productos')
-                                    ->where('id','LIKE','%'.$busq.'%' )
+            $productos =  productos::where('id','LIKE','%'.$busq.'%' )
                                     ->orWhere('Type','LIKE','%'.$busq.'%' )
                                     ->orWhere('ProductName','LIKE','%'.$busq.'%' )
                                     ->orWhere('ProductBrand','LIKE','%'.$busq.'%' )
@@ -21,7 +22,7 @@ class ProductsController extends Controller
                                     ->Paginate(10)
                                     ->appends('Busqueda', request('Busqueda')) ;
         }else {
-            $productos = DB::table('productos')->Paginate(10);
+            $productos = productos::Paginate(10);
         }
         return view('pages.Products' , ['productos' => $productos] );
     }
