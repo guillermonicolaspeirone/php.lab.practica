@@ -5,6 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Games extends Model
 {
+
+    protected $table = 'Games';
     
     /**
      * The attributes that are mass assignable.
@@ -22,6 +24,7 @@ class Games extends Model
         'img' ,
     ];
 
+    protected $guarded = ['id'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -38,6 +41,6 @@ class Games extends Model
      */
     protected $casts = [
     ];
-    public $timestamps = false;
+    
 }
 ?>
