@@ -53,13 +53,13 @@
             </div>
             <div class="col-md-4 px-md-1">
                 <div class="form-group">
-                    <label>Contact_page</label>
+                    <label>Contact page</label>
                     <p>{{$Games->Contact_page}}</p>
                 </div>
             </div>
             <div class="col-md-4 pl-md-1">
                 <div class="form-group">
-                    <label>Published_at</label>
+                    <label>Published at</label>
                     <p>{{$Games->Published_at}}</p>
                 </div>
             </div>

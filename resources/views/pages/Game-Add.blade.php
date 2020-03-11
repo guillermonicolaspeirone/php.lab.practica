@@ -32,10 +32,13 @@
                 <div class="col-md-6 pr-md-1">
                     <div class="form-group">
                         <label>Genere</label>
-                        <input type="text" name="Genere" id="Genere"  class="form-control  {{ $errors->has('Genere') ? ' is-invalid' : '' }}"
-                            placeholder="Genere" value="{{ old('Genere') }}">
+                       <select class="selectpicker form-control {{ $errors->has('Genere') ? ' is-invalid' : '' }}" name="Genere" multiple>
+                            <option>action</option>
+                            <option>strategy</option>
+                            <option>survival</option>
+                        </select>
                     </div>
-                    {!! $errors->first('name' , '<span class="help-block" style="color : red">:message</span>') !!}
+                    {!! $errors->first('Genere' , '<span class="help-block" style="color : red">:message</span>') !!}
                 </div>
                 <div class="col-md-6 pl-md-1">
                     <div class="form-group">
