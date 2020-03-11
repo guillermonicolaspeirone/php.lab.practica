@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Productos extends Model
 
 {
-    use Notifiable;
-
+    
     protected $table = 'Productos';
 
     /**
