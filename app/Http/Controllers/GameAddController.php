@@ -54,10 +54,14 @@ class GameAddController extends Controller
 
             Storage::disk('local')->put('public'.'/'. 'img'.'/'.$fileName, $img, 'public');
         
+            $generos = "";
+            foreach ($request['Genere'] as $gn ) {
+                $generos = $generos.", ".$gn;
+            }
 
-
+            
         Games::create([
-            'Genere' => $request['Genere'],
+            'Genere' =>  $generos ,
             'Name' => $request['name'],
             'Developer'=> $request['Developer'],
             'Status' => $request['Status'],
