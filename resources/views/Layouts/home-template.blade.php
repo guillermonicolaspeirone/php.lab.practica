@@ -15,6 +15,7 @@
 
 <body class="sb-sidenav-toggled">
 
+    @yield('jsScript')
 
     <!-- nav -->
     @include('includes.navbar')
