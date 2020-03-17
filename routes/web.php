@@ -25,6 +25,8 @@ Route::get('home', 'HomeController@index')->name('home') -> middleware('verified
 //Products
 Route::get('Products', 'ProductsController@index')->name('Products') -> middleware('verified');
 Route::post('Products', 'ProductsController@index')-> middleware('verified');
+Route::get('ProductAddView', 'ProductsController@ProductAddView')->name('ProductAddView') -> middleware('verified');
+Route::get('ProductUpdateView/{id}', 'ProductsController@ProductUpdateView')->name('ProductUpdateView') -> middleware('verified');
 
 //Games
 Route::get('Games', 'GamesController@index')->name('Games') -> middleware('verified');
@@ -36,7 +38,7 @@ Route::post('GamesAdd', 'GameAddController@Add');
 Route::get('Settings', 'Auth\EditUserController@index')->name('Settings') -> middleware('verified');
 Route::post('Settings' , 'Auth\EditUserController@updateuser' )-> middleware('verified');
 
-//Reset passeord
+//Reset password
 Route::get('password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.reset');
 Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset.token');

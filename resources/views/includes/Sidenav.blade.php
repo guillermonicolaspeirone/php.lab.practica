@@ -19,7 +19,7 @@
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{route('Products')}}"> Products </a>
-                        <a class="nav-link" href="{{route('Games')}}"> Games</a>
+                        <a class="nav-link" href="{{route('ProductAddView')}}">Add Products </a>
                     </nav>
                 </div>
 
@@ -40,7 +40,7 @@
                 <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth"
-                            aria-expanded="false" aria-controls="pagesCollapseAuth">Upload
+                            aria-expanded="false" aria-controls="pagesCollapseAuth">Games
                             <div class="sb-sidenav-collapse-arrow">
                                 <i class="fas fa-angle-down"></i>
                             </div>
@@ -48,13 +48,13 @@
                         <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordionPages">
                             <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="{{route('Games')}}"> Games</a>
                                 <a class="nav-link" href="{{route('GamesAdd')}}">Add Game</a>
-                                <a class="nav-link" href="#">Link</a>
                                 <a class="nav-link" href="#"> Link</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError"
-                            aria-expanded="false" aria-controls="pagesCollapseError">sub menu 2
+                            aria-expanded="false" aria-controls="pagesCollapseError">Products
                             <div class="sb-sidenav-collapse-arrow">
                                 <i class="fas fa-angle-down"></i>
                             </div>
@@ -62,9 +62,9 @@
                         <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordionPages">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="#">Link </a>
-                                <a class="nav-link" href="#"> Link</a>
-                                <a class="nav-link" href="#">Link</a>
+                                <a class="nav-link" href="{{route('ProductAddView')}}">Add Products </a>
+                                <a class="nav-link" href="#">Modifi Products</a>
+                                <a class="nav-link" href="#">Remove Products</a>
                             </nav>
                         </div>
                     </nav>

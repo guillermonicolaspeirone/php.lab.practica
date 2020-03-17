@@ -76,14 +76,21 @@
                             <tbody>
 
                                 @foreach ($productos as $prod)
-                                <tr>
-                                    <td> {{$prod->id}} </td>
-                                    <td> {{$prod->Type}} </td>
-                                    <td> {{$prod->ProductName}} </td>
-                                    <td> {{$prod->ProductBrand}} </td>
-                                    <td> {{$prod->Value}} </td>
-                                    <td> {{$prod->Stock}} </td>
+                               <tr>
+                                    
+                                        <td> 
+                                            <a href="{{route('ProductUpdateView', $prod->id)}}">
+                                             {{$prod->id}}
+                                            </a>
+                                        </td>
+                                        <td> {{$prod->Type}} </td>
+                                        <td> {{$prod->ProductName}} </td>
+                                        <td> {{$prod->ProductBrand}} </td>
+                                        <td> {{$prod->Value}} </td>
+                                        <td> {{$prod->Stock}} </td>
+                                   
                                 </tr>
+                                
                                 @endforeach
 
                             </tbody>

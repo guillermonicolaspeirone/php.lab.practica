@@ -27,4 +27,44 @@ class ProductsController extends Controller
         return view('pages.Products' , ['productos' => $productos] );
     }
 
+    public function ProductAddView(){
+        return view('pages.Product-Add');
+    }
+    
+    public function ProductUpdateView($id){
+        $Product = productos::where('id', $id)->first();
+        return view('pages.Product-Update' , compact('Product') ,);
+    }
+
+    public function store(Request $request){
+
+        $productos = productos::create($request->all());
+
+        return response()->json($productos, 201);
+
+    }
+
+    public function update(Request $request, productos $productos){
+
+       // $productos->update($request->all());
+
+        return response()->json($productos, 200);
+
+    }
+
+    public function delete(Article $article){
+
+        $productos->delete();
+
+        return response()->json(null, 204);
+    }
+
+
+
+
+
+
+
+
+
 }
