@@ -60,17 +60,16 @@ class GameAddController extends Controller
             }
 
             
-        Games::create([
-            'Genere' =>  $generos ,
-            'Name' => $request['name'],
-            'Developer'=> $request['Developer'],
-            'Status' => $request['Status'],
-            'Value' => $request['Value'],
-            'Published_at' => $request['Published_at'],
-            'Contact_page' => $request['Contact_page'],
-            'img' => $fileName,
-
-        ]);
+            Games::create([
+                'Genere' =>  $generos ,
+                'Name' => $request['name'],
+                'Developer'=> $request['Developer'],
+                'Status' => $request['Status'],
+                'Value' => $request['Value'],
+                'Published_at' => $request['Published_at'],
+                'Contact_page' => $request['Contact_page'],
+                'img' => $fileName,
+            ]);
 
             return redirect('home') ;
 

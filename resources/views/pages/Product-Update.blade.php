@@ -14,6 +14,7 @@
         <h5 class="title">Product update</h5>
     </div>
     <form action="{{ route('UpdateProducts' , $Product->id ) }}" method="POST">
+        {{ csrf_field() }}
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6 pr-md-1">

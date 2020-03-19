@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\productos ;
-
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+
+use App\productos ;
+
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class ProductsController extends Controller
 {
@@ -38,25 +42,45 @@ class ProductsController extends Controller
 
     public function store(Request $request){
 
-        $productos = productos::create($request->all());
+        $validatedData = $this->validate(request(), [
+            
+            'ProductName' => 'required|max:255',
+            'ProductBrand' => 'required|max:255',
+            'Value' => 'required|max:255',
+            'Stock'  => 'required|max:255',
+            'Type'  => 'required|max:255'
 
-        return response()->json($productos, 201);
+        ]);
+
+        if ($validatedData == true) {
+
+            $productos = productos::create($request->all());
+            return response()->json($productos, 201);  
+           
+        }else{
+
+            return  back()
+                    ->withErrors()
+                    ->withInput(request(['ProductName', 'ProductBrand' ,  'Value' , 'Stock' , 'Type' ]));
+        }
 
     }
 
-    public function update(Request $request, productos $productos){
+    public function update(Request $request, $id ){
 
-       // $productos->update($request->all());
+        // $product = productos::where('id', $id)->first();
 
-        return response()->json($productos, 200);
+        // $product->update($request->all());
+
+        // return response()->json($product, 200);
 
     }
 
     public function delete(Article $article){
 
-        $productos->delete();
+        //$productos->delete();
 
-        return response()->json(null, 204);
+        //return response()->json(null, 204);
     }
 
 

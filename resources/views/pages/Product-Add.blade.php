@@ -16,7 +16,6 @@
     <form action="{{ route('AddProducts') }}" method="POST">
         {{ csrf_field() }}
         <div class="card-body">
-            
             <div class="row">
                 <div class="col-md-6 pr-md-1">
                     <div class="form-group">
