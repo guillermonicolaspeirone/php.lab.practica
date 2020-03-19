@@ -76,7 +76,9 @@ class ProductsController extends Controller
 
     }
 
-    public function delete(Article $article){
+    public function delete( $id ){
+
+        // $product = productos::where('id', $id)->first();
 
         //$productos->delete();
 

@@ -20,5 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // products 
 Route::post('AddProducts', 'ProductsController@store')->name('AddProducts');
-Route::put('UpdateProducts/{id}', 'ProductsController@update')->name('UpdateProducts');
-Route::delete('Productos/{id}', 'ProductsController@delete');
+Route::put('UpdateProducts/{productos}', 'ProductsController@update')->name('UpdateProducts');
+Route::delete('DeleteProductos/{productos}', 'ProductsController@delete')->name('DeleteProductos');
