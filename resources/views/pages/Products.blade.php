@@ -61,6 +61,11 @@
                                         style="width: 64px;">
                                         Stock
                                     </th>
+                                    <th tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
+                                    style="width: 64px;">
+                                    options
+                                    </th>
+                                    
                                 </tr>
                             </thead>
                             <tfoot>
@@ -71,6 +76,7 @@
                                     <th rowspan="1" colspan="1">ProductBrand</th>
                                     <th rowspan="1" colspan="1">Value</th>
                                     <th rowspan="1" colspan="1">Stock</th>
+                                    <th rowspan="1" colspan="1">options</th>
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -78,16 +84,18 @@
                                 @foreach ($productos as $prod)
                                <tr>
                                     
-                                        <td> 
-                                            <a href="{{route('ProductUpdateView', $prod->id)}}">
-                                             {{$prod->id}}
-                                            </a>
-                                        </td>
+                                        <td> {{$prod->id}} </td>
                                         <td> {{$prod->Type}} </td>
                                         <td> {{$prod->ProductName}} </td>
                                         <td> {{$prod->ProductBrand}} </td>
                                         <td> {{$prod->Value}} </td>
                                         <td> {{$prod->Stock}} </td>
+                                        <td>
+                                            <a href="{{route('ProductUpdateView', $prod->id)}}"> <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a href="{{route('DeleteProducts', $prod->id)}}"> <i class="fas fa-trash" style="color:red"></i>
+                                            </a>
+                                        </td>
                                    
                                 </tr>
                                 
