@@ -91,10 +91,17 @@
                                         <td> {{$prod->Value}} </td>
                                         <td> {{$prod->Stock}} </td>
                                         <td>
-                                            <a href="{{route('ProductUpdateView', $prod->id)}}"> <i class="fas fa-edit"></i>
-                                            </a>
-                                            <a href="{{route('DeleteProducts', $prod->id)}}"> <i class="fas fa-trash" style="color:red"></i>
-                                            </a>
+                                           
+                                            <form action="{{ route('DeleteProductos', $prod->id) }}" method="POST">
+                                                {{ method_field('DELETE') }}
+                                                {{ csrf_field() }}
+
+                                                <a class="btn" href="{{route('ProductUpdateView', $prod->id)}}">  <i class="fas fa-edit" style="color:#0275d8 "></i>
+                                                </a>
+
+                                                <button class="btn"><i class="fas fa-trash" style="color:red"></i> </button>
+                                            </form>
+                                         
                                         </td>
                                    
                                 </tr>
