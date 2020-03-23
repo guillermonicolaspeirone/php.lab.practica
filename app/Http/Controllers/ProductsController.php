@@ -68,19 +68,21 @@ class ProductsController extends Controller
 
     public function update(Request $request, $id ){
 
-        // $product = productos::where('id', $id)->first();
+         $product = productos::where('id', $id)->first();
 
-        // $product->update($request->all());
+         $product->update($request->all());
 
-        // return response()->json($product, 200);
+         return response()->json($product, 200);
 
     }
 
-    public function delete(Article $article){
+    public function delete( $id ){
 
-        //$productos->delete();
+        $product = productos::where('id', $id)->first();
 
-        //return response()->json(null, 204);
+        $product->delete();
+
+        return response()->json(null, 204);
     }
 
 
